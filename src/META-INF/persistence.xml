@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="2.0">
+
+    <persistence-unit name="HelloWorlPU">
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+        <class>domain.Message</class>
+<exclude-unlisted-classes>true</exclude-unlisted-classes>
+
+
+        <properties>
+            <property name="hibernate.connection.url" value="jdbc:sqlite:/home/alex/IdeaProjects/jpa_hibernate_trainig/data.db"/>
+            <property name="hibernate.connection.driver_class" value="org.sqlite.JDBC"/>
+            <property name="hibernate.archive.autodetection" value="class"/>
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hbm2ddl.auto" value="create"/>
+            <property name="hibernate.dialect" value="com.enigmabridge.hibernate.dialect.SQLiteDialect"/>
+        </properties>
+
+
+    </persistence-unit>
+</persistence>
