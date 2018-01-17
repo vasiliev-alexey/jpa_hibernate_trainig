@@ -1,11 +1,15 @@
 package av.domain;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
 @Entity
 public class Bid {
 
+    @Transient
     private Item item;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long Id;
 
     public Bid(Item item) {
         this.item = item;

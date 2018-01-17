@@ -2,7 +2,7 @@ package av.domain;
 
 import av.domain.enums.AuctionType;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 import javax.validation.constraints.Future;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -14,6 +14,9 @@ import java.util.Set;
 @Entity
 public class Item {
 
+    @javax.persistence.Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private long Id;
 
     @NotNull
     @Size(min = 2, max = 255, message = "Не верная длина имени минимум 2 максимум 255")
@@ -26,6 +29,7 @@ public class Item {
     private Date auctionStart;
     @Future
     private Date auctionEnd;
+    @Transient
     private Set<Bid> bids = new HashSet<Bid>();
 
 
