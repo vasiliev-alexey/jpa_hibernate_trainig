@@ -8,7 +8,7 @@ public class Bid {
     @Transient
     private Item item;
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(generator = "ID_GENERATOR")
     private long Id;
 
     public Bid(Item item) {
@@ -22,5 +22,9 @@ public class Bid {
     public void setItem(Item item) {
         this.item = item;
         item.getBids().add(this);
+    }
+
+    public long getId() {
+        return Id;
     }
 }
