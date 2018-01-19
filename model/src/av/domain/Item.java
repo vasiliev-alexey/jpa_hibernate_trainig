@@ -24,10 +24,14 @@ public class Item {
     private String description;
     private Date createdOn;
     private boolean verified;
+    @NotNull
+    @Enumerated(EnumType.STRING)
     private AuctionType auctionType;
     private BigDecimal initialPrice;
+    @Temporal(TemporalType.TIMESTAMP)
     private Date auctionStart;
     @Future
+    @Temporal(TemporalType.TIMESTAMP)
     private Date auctionEnd;
     @Transient
     private Set<Bid> bids = new HashSet<Bid>();
